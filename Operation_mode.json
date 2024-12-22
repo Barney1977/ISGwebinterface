@@ -1,0 +1,54 @@
+{
+ "type": "enum",
+ "title": { 
+  "en": "Operation_mode"
+},
+  "getable": true,
+  "setable": true,
+  "address": 1500,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "1",
+      "title": {
+        "en": "Standby",
+        "nl": "Standbywerking"
+      }
+    },
+    {
+      "id": "2",
+      "title": {
+        "en": "programmode",
+        "nl": "Programmawerking"
+      }
+    },
+    {
+      "id": "3",
+      "title": {
+        "en": "Comfortmode",
+        "nl": "Comfortwerking"
+      }
+    },
+    {
+      "id": "4",
+      "title": {
+        "en": "Economic",
+        "nl": "ECO modus"
+      }
+    },
+    {
+      "id": "5",
+      "title": {
+        "en": "Heating water",
+        "nl": "warmwaterbedrijf"
+      }
+    },
+    {
+      "id": "0",
+      "title": {
+        "en": "emergency",
+        "nl": "Noodbedrijf"
+      }
+    }
+  ]
+}

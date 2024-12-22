@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "Stiebel Eltron Heatpump"
+  },
+  "class": "other",
+  "connectivity": ["lan"],
+  "capabilities": [
+    "Operation_mode",
+    "target_temperature",
+    "measure_temperature.inputregister.1",
+    "measure_temperature.inputregister.2",
+    "measure_temperature.inputregister.3",
+    "measure_temperature.inputregister.4",
+    "measure_temperature.inputregister.5",
+    "measure_temperature.inputregister.6",
+    "measure_temperature.inputregister.7"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature.inputregister.1": {
+      "title": {
+        "en": "Outside temp"
+      },
+      "address": 506,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.2": {
+      "title": {
+        "en": "Actual HK1 temp"
+      },
+      "address": 507,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.3": {
+      "title": {
+        "en": "Request temp HK1"
+      },
+      "address": 509,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.4": {
+      "title": {
+        "en": "Actual temp WP"
+      },
+      "address": 512,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.5": {
+      "title": {
+        "en": "Low pressure"
+      },
+      "address": 544,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.6": {
+      "title": {
+        "en": "High pressure"
+      },
+      "address": 546,
+      "scale": 10
+    },
+    "measure_temperature.inputregister.7": {
+      "title": {
+        "en": "Circulation"
+      },
+      "address": 2516,
+      "scale": 1
+    }
+  },
+  "images": {
+    "small": "/drivers/stiebel-heatpump/assets/small.png",
+    "large": "/drivers/stiebel-heatpump/assets/large.png",
+    "xlarge": "/drivers/stiebel-heatpump/assets/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "device",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "device",
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
