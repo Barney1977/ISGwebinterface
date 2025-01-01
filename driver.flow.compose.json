@@ -1,0 +1,408 @@
+{
+  "triggers": [
+    {
+      "id": "check_water_temperature",
+      "title": {
+        "en": "Check water temperature",
+        "nl": "Controleer watertemperatuur"
+      }
+    },
+      {
+        "id": "measure_temperature_changed",
+        "title": {
+          "en": "The temperature changes"
+        },
+        "tokens": [
+          {
+            "name": "measure_temperature",
+            "title": {
+              "en": "Temperature"
+            },
+            "type": "number",
+            "example": 23.5
+          }
+        ]
+      }
+    ],
+  
+
+
+
+  "actions": [
+    {
+      "id": "adjust_heat_water_temperature",
+      "title": {
+        "en": "Adjust heat water temperature",
+        "nl": "Pas de watertemperatuur aan"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "Wished_temperature",
+          "placeholder": {
+            "en": "Desired temperature",
+            "nl": "Gewenste temperatuur"
+          },
+          "min": 10,
+          "max": 60,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "adjust_heating_temperature",
+      "title": {
+        "en": "Adjust heating temperature",
+        "nl": "Pas de verwarmings temperatuur aan"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "Wished_temperature",
+          "placeholder": {
+            "en": "Desired temperature",
+            "nl": "Gewenste temperatuur"
+          },
+          "min": 10,
+          "max": 30,
+          "step": 0.5
+        }
+      ]
+    },
+    {
+      "id": "set_operation_mode",
+      "title": {
+        "en": "Set Operation Mode",
+        "nl": "Stel de werkingsmodus in"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "operation_mode",
+          "title": {
+            "en": "Operation Mode",
+            "nl": "Werkingsmodus"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Standby",
+                "nl": "Standbywerking"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Programmode",
+                "nl": "Programmawerking"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Comfortmode",
+                "nl": "Comfortwerking"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Economic",
+                "nl": "ECO modus"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Heating water",
+                "nl": "Warmwaterbedrijf"
+              }
+            },
+            {
+              "id": "0",
+              "title": {
+                "en": "Emergency",
+                "nl": "Noodbedrijf"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "is_target_temperature",
+      "title": {
+        "en": "Target temperature is",
+        "nl": "Doeltemperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "target_temperature",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_measure_temperature",
+      "title": {
+        "en": "Measured temperature is",
+        "nl": "Gemeten temperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Outside_temp",
+      "title": {
+        "en": "Outside temp is",
+        "nl": "Buiten temperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.1",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Actual_room_temperature",
+      "title": {
+        "en": "Actual room temperature is",
+        "nl": "Kamer temperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.2",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Hot_water_temperature",
+      "title": {
+        "en": "Hot water temperature is",
+        "nl": "Heet water temperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.3",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Actual_Flow_temp",
+      "title": {
+        "en": "Actual Flow temp is",
+        "nl": "WP Aanvoer temperatuur is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.4",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Actual_retun_temp",
+      "title": {
+        "en": "Actual retun temp is",
+        "nl": "WP retour temp is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.5",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_requested_water_temp",
+      "title": {
+        "en": "Requested water temp is",
+        "nl": "Gevraagde water temp is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.6",
+          "placeholder": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Dew_point",
+      "title": {
+        "en": "Dew point is",
+        "nl": "Dauwpunt is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_temperature.inputregister.7",
+          "placeholder": {
+            "en": "Dew point",
+            "nl": "Dauwpunt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_pump_state",
+      "title": {
+        "en": "Pump state is",
+        "nl": "Pomptoestand is"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "pump_state.inputregister.8",
+          "title": {
+            "en": "Pump state",
+            "nl": "Pomptoestand"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_bron_pump",
+      "title": {
+        "en": "Bron pump is",
+        "nl": "Bron pomp is"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "pump_state.inputregister.14",
+          "title": {
+            "en": "Bron pump",
+            "nl": "Bron pomp"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_measure_pressure",
+      "title": {
+        "en": "Measured pressure is",
+        "nl": "Gemeten druk is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_pressure.inputregister.9",
+          "placeholder": {
+            "en": "Pressure",
+            "nl": "Druk"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_measure_pressureII",
+      "title": {
+        "en": "Measured pressure II is",
+        "nl": "Gemeten druk II is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_pressure.inputregister.10",
+          "placeholder": {
+            "en": "Pressure",
+            "nl": "Druk"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_powerconsumption_heating_water",
+      "title": {
+        "en": "Powerconsumption heating water is",
+        "nl": "Energiegebruik warm water is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_power.inputregister.11",
+          "placeholder": {
+            "en": "Power",
+            "nl": "Vermogen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_powerconsumption_heating",
+      "title": {
+        "en": "Powerconsumption heating is",
+        "nl": "Energiegebruik verwarmen is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_power.inputregister.12",
+          "placeholder": {
+            "en": "Power",
+            "nl": "Vermogen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_Powerconsumption_today",
+      "title": {
+        "en": "Powerconsumption today is",
+        "nl": "Totaal Energiegebruik is"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "measure_power.inputregister.13",
+          "placeholder": {
+            "en": "Power",
+            "nl": "Vermogen"
+          }
+        }
+      ]
+    }
+  ]
+}

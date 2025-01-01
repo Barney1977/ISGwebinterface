@@ -7,62 +7,151 @@
   "capabilities": [
     "Operation_mode",
     "target_temperature",
+    "measure_temperature",
     "measure_temperature.inputregister.1",
     "measure_temperature.inputregister.2",
     "measure_temperature.inputregister.3",
     "measure_temperature.inputregister.4",
     "measure_temperature.inputregister.5",
     "measure_temperature.inputregister.6",
-    "measure_temperature.inputregister.7"
+    "measure_temperature.inputregister.7",
+    "pump_state.inputregister.8",
+    "pump_stateII.inputregister.8",
+    "pump_state.inputregister.14",
+    "pump_stateII.inputregister.14",
+    "measure_pressure.inputregister.9",
+    "measure_pressure.inputregister.10",
+    "measure_power.inputregister.11",
+    "measure_power.inputregister.12",
+    "measure_power.inputregister.13"
   ],
   "capabilitiesOptions": {
     "measure_temperature.inputregister.1": {
       "title": {
-        "en": "Outside temp"
+        "en": "Outside temp",
+        "nl": "Buiten temperatuur"
       },
       "address": 506,
       "scale": 10
     },
     "measure_temperature.inputregister.2": {
       "title": {
-        "en": "Actual HK1 temp"
+        "en": "Actual room temperature",
+        "nl": "Kamer temperatuur"
       },
-      "address": 507,
+      "address": 583,
       "scale": 10
     },
     "measure_temperature.inputregister.3": {
       "title": {
-        "en": "Request temp HK1"
+        "en": "Hot water temperature",
+        "nl": "Heet water temperatuur"
       },
-      "address": 509,
+      "address": 521,
       "scale": 10
     },
     "measure_temperature.inputregister.4": {
       "title": {
-        "en": "Actual temp WP"
+        "en": "Actual Flow temp",
+        "nl": "WP Aanvoer temperatuur"
       },
       "address": 512,
       "scale": 10
     },
     "measure_temperature.inputregister.5": {
       "title": {
-        "en": "Low pressure"
+        "en": "Actual retun temp",
+        "nl": "WP retour temp"
       },
-      "address": 544,
+      "address": 541,
       "scale": 10
     },
     "measure_temperature.inputregister.6": {
       "title": {
-        "en": "High pressure"
+        "en": "requested water temp",
+        "nl": "gevraagde water temp"
       },
-      "address": 546,
+      "address": 522,
       "scale": 10
     },
     "measure_temperature.inputregister.7": {
       "title": {
-        "en": "Circulation"
+        "en": "Dew point",
+        "nl": "Dauwpunt"
       },
-      "address": 2516,
+      "address": 586,
+      "scale": 10
+    },
+    "pump_state.inputregister.8": {
+      "title": {
+        "en": "Circulation pump",
+        "nl": "Circulation pomp"
+      },
+      "address": 2511,
+      "scale": 1
+    },
+      "pump_stateII.inputregister.8": {
+      "title": {
+        "en": "Circulation pump",
+        "nl": "Circulation pomp"
+      },
+      "address": 2511,
+      "scale": 1
+    },
+    "measure_pressure.inputregister.9": {
+      "title": {
+        "en": "Low pressure",
+        "nl": "Lage druk"
+      },
+      "address": 544,
+      "scale": 100
+    },
+    "measure_pressure.inputregister.10": {
+      "title": {
+        "en": "High pressure",
+        "nl": "Hoge druk"
+      },
+      "address": 546,
+      "scale": 100
+    }, 
+
+    "measure_power.inputregister.11": {
+      "title": {
+        "en": "powerconsumption heating water",
+        "nl": "Energiegebruik warm water"
+      },
+      "address": 3514,
+      "scale": 1
+    },
+    "measure_power.inputregister.12": {
+      "title": {
+        "en": "powerconsumption heating",
+        "nl": "Energiegebruik verwarmen"
+      },
+      "address": 3511,
+      "scale": 1
+    },
+    "measure_power.inputregister.13": {
+      "title": {
+        "en": "Powerconsumption today",
+        "nl": "Totaal Energiegebruik"
+      },
+      "scale": 1
+    },
+    "pump_state.inputregister.14": {
+      "title": {
+        "en": "bron pump",
+        "nl": "bron pomp"
+      },
+      "address": 2514,
+      "scale": 1
+    },
+      "pump_stateII.inputregister.14": {
+      "title": {
+        "en": "bron pump",
+        "nl": "bron pomp"
+      },
+      "address": 2514,
       "scale": 1
     }
   },
@@ -93,5 +182,24 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "ui": {
+    "components": [
+      {
+        "id": "thermostat",
+        "capabilities": [
+          "measure_temperature",
+          "target_temperature"
+        ],
+        "type": "thermostat",
+        "options": {
+          "temperature": {
+            "measure_temperature": "measure_temperature",
+            "target_temperature": "target_temperature"
+          }
+        }
+      }
+    ]
+  }
 }
+
