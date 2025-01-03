@@ -21,12 +21,14 @@
     "pump_stateII.inputregister.14",
     "measure_pressure.inputregister.9",
     "measure_pressure.inputregister.10",
-    "measure_power.inputregister.11",
-    "measure_power.inputregister.12",
-    "measure_power.inputregister.13"
+    "meter_power.inputregister.11",
+    "meter_power.inputregister.12",
+    "meter_power.inputregister.13"
   ],
   "capabilitiesOptions": {
     "measure_temperature.inputregister.1": {
+      "power_became_greater_than": false,
+      "power_became_less_than": false,
       "title": {
         "en": "Outside temp",
         "nl": "Buiten temperatuur"
@@ -35,6 +37,8 @@
       "scale": 10
     },
     "measure_temperature.inputregister.2": {
+      "power_became_greater_than": false,
+      "power_became_less_than": false,
       "title": {
         "en": "Actual room temperature",
         "nl": "Kamer temperatuur"
@@ -43,6 +47,8 @@
       "scale": 10
     },
     "measure_temperature.inputregister.3": {
+      "power_became_greater_than": false,
+      "power_became_less_than": false,
       "title": {
         "en": "Hot water temperature",
         "nl": "Heet water temperatuur"
@@ -51,6 +57,8 @@
       "scale": 10
     },
     "measure_temperature.inputregister.4": {
+      "power_became_greater_than": false,
+      "power_became_less_than": false,
       "title": {
         "en": "Actual Flow temp",
         "nl": "WP Aanvoer temperatuur"
@@ -90,7 +98,7 @@
       "address": 2511,
       "scale": 1
     },
-      "pump_stateII.inputregister.8": {
+    "pump_stateII.inputregister.8": {
       "title": {
         "en": "Circulation pump",
         "nl": "Circulation pomp"
@@ -113,9 +121,8 @@
       },
       "address": 546,
       "scale": 100
-    }, 
-
-    "measure_power.inputregister.11": {
+    },
+    "meter_power.inputregister.11": {
       "title": {
         "en": "powerconsumption heating water",
         "nl": "Energiegebruik warm water"
@@ -123,7 +130,7 @@
       "address": 3514,
       "scale": 1
     },
-    "measure_power.inputregister.12": {
+    "meter_power.inputregister.12": {
       "title": {
         "en": "powerconsumption heating",
         "nl": "Energiegebruik verwarmen"
@@ -131,7 +138,7 @@
       "address": 3511,
       "scale": 1
     },
-    "measure_power.inputregister.13": {
+    "meter_power.inputregister.13": {
       "title": {
         "en": "Powerconsumption today",
         "nl": "Totaal Energiegebruik"
@@ -146,7 +153,7 @@
       "address": 2514,
       "scale": 1
     },
-      "pump_stateII.inputregister.14": {
+    "pump_stateII.inputregister.14": {
       "title": {
         "en": "bron pump",
         "nl": "bron pomp"
@@ -202,4 +209,3 @@
     ]
   }
 }
-
